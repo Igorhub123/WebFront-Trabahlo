@@ -1,0 +1,49 @@
+<div class="min-vh-100 d-flex align-items-center justify-content-center bg-black text-light">
+    <div class="container text-light p-5 rounded shadow-lg"
+        style="max-width: 800px; background-color: #1c1c1c !important;">
+        <h2 class="mb-4 border-bottom pb-2 text-center">Cadastro de Marmita</h2>
+
+        <form #form="ngForm" (ngSubmit)="salvar()" novalidate>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="name" class="form-label">Nome:</label>
+                    <input id="name" name="descricao" class="form-control bg-secondary text-light border-0"
+                        [(ngModel)]="marmithub.descricao">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="data" class="form-label">Data:</label>
+                    <input id="data" name="data_food" type="date" class="form-control bg-secondary text-light border-0"
+                        [(ngModel)]="dataInput">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="disponivel" class="form-label">Disponível:</label>
+                    <select id="disponivel" name="disp_ped" class="form-select bg-secondary text-light border-0"
+                        [(ngModel)]="marmithub.disp_ped">
+                        <option [value]="true">Sim</option>
+                        <option [value]="false">Não</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="tamanho" class="form-label">Tamanho:</label>
+                    <input id="tamanho" name="cod_tamanho" class="form-control bg-secondary text-light border-0"
+                        [(ngModel)]="marmithub.cod_tamanho">
+                </div>
+
+                <div class="col-md-4">
+                    <label for="valordotamanho" class="form-label">Valor do Tamanho:</label>
+                    <input id="valordotamanho" name="valor_tamanho" type="number" step="0.01"
+                        class="form-control bg-secondary text-light border-0" [(ngModel)]="marmithub.valor_tamanho">
+                </div>
+            </div>
+
+            <div class="text-end">
+                <button type="submit" class="btn btn-outline-light px-4">Salvar</button>
+            </div>
+        </form>
+    </div>
+</div>
